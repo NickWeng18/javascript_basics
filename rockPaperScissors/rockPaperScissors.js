@@ -10,32 +10,34 @@ const playerSelection = playerPrompt.charAt(0).toUpperCase() + playerPrompt.slic
 const computerSelection = getComputerChoice();
 
 function playRound(playerSelection, computerSelection){
-    if (playerSelection = "Rock") {
-        if (computerSelection = "Rock"){
-            alert("Draw! you both picked " + computerSelection);
-        } else if (computerSelection = "Scissors"){
-            alert("You Win! " + playerSelection + " beats " + computerSelection);
+    if (playerSelection == "Rock") {
+        if (computerSelection == "Rock"){
+           return "Draw! you both picked " + computerSelection;
+        } else if (computerSelection == "Scissors"){
+            return "You Win! " + playerSelection + " beats " + computerSelection;
         } else {
-            alert("You Lose! " + computerSelection + " beats " + playerSelection);
+            return "You Lose! " + computerSelection + " beats " + playerSelection;
         }
 
-    } else if (playerSelection = "Scissors") {
-        if (computerSelection = "Rock"){
-            alert("You Lose! " + computerSelection + " beats " + playerSelection);
-        } else if (computerSelection = "Scissors"){
-            alert("Draw! you both picked " + computerSelection);
+    } else if (playerSelection == "Scissors") {
+        if (computerSelection == "Rock"){
+            return "You Lose! " + computerSelection + " beats " + playerSelection;
+        } else if (computerSelection == "Scissors"){
+            return "Draw! you both picked " + computerSelection;
         } else {
-            alert("You Win! " + playerSelection + " beats " + computerSelection);
+            return "You Win! " + playerSelection + " beats " + computerSelection;
         }
 
-    } else if (playerSelection = "Paper") {
-        if (computerSelection = "Rock"){
-            alert("You Win! " + playerSelection + " beats " + computerSelection);
-        } else if (computerSelection = "Scissors"){
-            alert("You Lose! " + computerSelection + " beats " + playerSelection);
+    } else if (playerSelection == "Paper") {
+        if (computerSelection == "Rock"){
+            return "You Win! " + playerSelection + " beats " + computerSelection;
+        } else if (computerSelection == "Scissors"){
+            return "You Lose! " + computerSelection + " beats " + playerSelection;
         } else {
-            alert("Draw! you both picked " + computerSelection);
+            return "Draw! you both picked " + computerSelection;
         }
         
-    } else prompt("Please select a valid input")
+    } else return "Please select a valid input"
 }
+
+alert(playRound(playerSelection, computerSelection))
